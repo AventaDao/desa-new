@@ -1,292 +1,221 @@
- <div class="row">
-     <!-- [ sample-page ] start -->
-     <div class="col-md-6 col-xl-3">
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">Total Page Views</h6>
-                 <h4 class="mb-3">4,42,236 <span class="badge bg-light-primary border border-primary"><i
-                             class="ti ti-trending-up"></i> 59.3%</span></h4>
-                 <p class="mb-0 text-muted text-sm">You made an extra <span class="text-primary">35,000</span> this
-                     year
-                 </p>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-6 col-xl-3">
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">Total Users</h6>
-                 <h4 class="mb-3">78,250 <span class="badge bg-light-success border border-success"><i
-                             class="ti ti-trending-up"></i> 70.5%</span></h4>
-                 <p class="mb-0 text-muted text-sm">You made an extra <span class="text-success">8,900</span> this
-                     year</p>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-6 col-xl-3">
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">Total Order</h6>
-                 <h4 class="mb-3">18,800 <span class="badge bg-light-warning border border-warning"><i
-                             class="ti ti-trending-down"></i> 27.4%</span></h4>
-                 <p class="mb-0 text-muted text-sm">You made an extra <span class="text-warning">1,943</span> this
-                     year</p>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-6 col-xl-3">
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">Total Sales</h6>
-                 <h4 class="mb-3">$35,078 <span class="badge bg-light-danger border border-danger"><i
-                             class="ti ti-trending-down"></i> 27.4%</span></h4>
-                 <p class="mb-0 text-muted text-sm">You made an extra <span class="text-danger">$20,395</span> this
-                     year
-                 </p>
-             </div>
-         </div>
-     </div>
+<div class="row">
+    <!-- Statistik Utama -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Jumlah Penduduk</h6>
+                <h4 class="mb-3">3,258 <span class="badge bg-light-primary border border-primary">
+                        <i class="ti ti-trending-up"></i> 2.4%</span></h4>
+                <p class="mb-0 text-muted text-sm">Naik <span class="text-primary">78</span> penduduk dari tahun lalu</p>
+            </div>
+        </div>
+    </div>
 
-     <div class="col-md-12 col-xl-8">
-         <div class="d-flex align-items-center justify-content-between mb-3">
-             <h5 class="mb-0">Unique Visitor</h5>
-             <ul class="nav nav-pills justify-content-end mb-0" id="chart-tab-tab" role="tablist">
-                 <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="chart-tab-home-tab" data-bs-toggle="pill"
-                         data-bs-target="#chart-tab-home" type="button" role="tab" aria-controls="chart-tab-home"
-                         aria-selected="true">Month</button>
-                 </li>
-                 <li class="nav-item" role="presentation">
-                     <button class="nav-link active" id="chart-tab-profile-tab" data-bs-toggle="pill"
-                         data-bs-target="#chart-tab-profile" type="button" role="tab"
-                         aria-controls="chart-tab-profile" aria-selected="false">Week</button>
-                 </li>
-             </ul>
-         </div>
-         <div class="card">
-             <div class="card-body">
-                 <div class="tab-content" id="chart-tab-tabContent">
-                     <div class="tab-pane" id="chart-tab-home" role="tabpanel" aria-labelledby="chart-tab-home-tab"
-                         tabindex="0">
-                         <div id="visitor-chart-1"></div>
-                     </div>
-                     <div class="tab-pane show active" id="chart-tab-profile" role="tabpanel"
-                         aria-labelledby="chart-tab-profile-tab" tabindex="0">
-                         <div id="visitor-chart"></div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-12 col-xl-4">
-         <h5 class="mb-3">Income Overview</h5>
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-                 <h3 class="mb-3">$7,650</h3>
-                 <div id="income-overview-chart"></div>
-             </div>
-         </div>
-     </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Keluarga Terdaftar</h6>
+                <h4 class="mb-3">1,024 <span class="badge bg-light-success border border-success">
+                        <i class="ti ti-trending-up"></i> 1.8%</span></h4>
+                <p class="mb-0 text-muted text-sm">Bertambah <span class="text-success">18</span> KK bulan ini</p>
+            </div>
+        </div>
+    </div>
 
-     <div class="col-md-12 col-xl-8">
-         <h5 class="mb-3">Recent Orders</h5>
-         <div class="card tbl-card">
-             <div class="card-body">
-                 <div class="table-responsive">
-                     <table class="table table-hover table-borderless mb-0">
-                         <thead>
-                             <tr>
-                                 <th>TRACKING NO.</th>
-                                 <th>PRODUCT NAME</th>
-                                 <th>TOTAL ORDER</th>
-                                 <th>STATUS</th>
-                                 <th class="text-end">TOTAL AMOUNT</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Camera Lens</td>
-                                 <td>40</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-danger f-10 m-r-5"></i>Rejected</span>
-                                 </td>
-                                 <td class="text-end">$40,570</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Laptop</td>
-                                 <td>300</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-warning f-10 m-r-5"></i>Pending</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Mobile</td>
-                                 <td>355</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-success f-10 m-r-5"></i>Approved</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Camera Lens</td>
-                                 <td>40</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-danger f-10 m-r-5"></i>Rejected</span>
-                                 </td>
-                                 <td class="text-end">$40,570</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Laptop</td>
-                                 <td>300</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-warning f-10 m-r-5"></i>Pending</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Mobile</td>
-                                 <td>355</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-success f-10 m-r-5"></i>Approved</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Camera Lens</td>
-                                 <td>40</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-danger f-10 m-r-5"></i>Rejected</span>
-                                 </td>
-                                 <td class="text-end">$40,570</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Laptop</td>
-                                 <td>300</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-warning f-10 m-r-5"></i>Pending</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Mobile</td>
-                                 <td>355</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-success f-10 m-r-5"></i>Approved</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                             <tr>
-                                 <td><a href="#" class="text-muted">84564564</a></td>
-                                 <td>Mobile</td>
-                                 <td>355</td>
-                                 <td><span class="d-flex align-items-center gap-2"><i
-                                             class="fas fa-circle text-success f-10 m-r-5"></i>Approved</span>
-                                 </td>
-                                 <td class="text-end">$180,139</td>
-                             </tr>
-                         </tbody>
-                     </table>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-12 col-xl-4">
-         <h5 class="mb-3">Analytics Report</h5>
-         <div class="card">
-             <div class="list-group list-group-flush">
-                 <a href="#"
-                     class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Company
-                     Finance Growth<span class="h5 mb-0">+45.14%</span></a>
-                 <a href="#"
-                     class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Company
-                     Expenses Ratio<span class="h5 mb-0">0.58%</span></a>
-                 <a href="#"
-                     class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">Business
-                     Risk Cases<span class="h5 mb-0">Low</span></a>
-             </div>
-             <div class="card-body px-2">
-                 <div id="analytics-report-chart"></div>
-             </div>
-         </div>
-     </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Data Kelahiran</h6>
+                <h4 class="mb-3">56 <span class="badge bg-light-warning border border-warning">
+                        <i class="ti ti-trending-up"></i> 4.2%</span></h4>
+                <p class="mb-0 text-muted text-sm"><span class="text-warning">12</span> bayi lahir bulan ini</p>
+            </div>
+        </div>
+    </div>
 
-     <div class="col-md-12 col-xl-8">
-         <h5 class="mb-3">Sales Report</h5>
-         <div class="card">
-             <div class="card-body">
-                 <h6 class="mb-2 f-w-400 text-muted">This Week Statistics</h6>
-                 <h3 class="mb-0">$7,650</h3>
-                 <div id="sales-report-chart"></div>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-12 col-xl-4">
-         <h5 class="mb-3">Transaction History</h5>
-         <div class="card">
-             <div class="list-group list-group-flush">
-                 <a href="#" class="list-group-item list-group-item-action">
-                     <div class="d-flex">
-                         <div class="flex-shrink-0">
-                             <div class="avtar avtar-s rounded-circle text-success bg-light-success">
-                                 <i class="ti ti-gift f-18"></i>
-                             </div>
-                         </div>
-                         <div class="flex-grow-1 ms-3">
-                             <h6 class="mb-1">Order #002434</h6>
-                             <p class="mb-0 text-muted">Today, 2:00 AM</P>
-                         </div>
-                         <div class="flex-shrink-0 text-end">
-                             <h6 class="mb-1">+ $1,430</h6>
-                             <p class="mb-0 text-muted">78%</P>
-                         </div>
-                     </div>
-                 </a>
-                 <a href="#" class="list-group-item list-group-item-action">
-                     <div class="d-flex">
-                         <div class="flex-shrink-0">
-                             <div class="avtar avtar-s rounded-circle text-primary bg-light-primary">
-                                 <i class="ti ti-message-circle f-18"></i>
-                             </div>
-                         </div>
-                         <div class="flex-grow-1 ms-3">
-                             <h6 class="mb-1">Order #984947</h6>
-                             <p class="mb-0 text-muted">5 August, 1:45 PM</P>
-                         </div>
-                         <div class="flex-shrink-0 text-end">
-                             <h6 class="mb-1">- $302</h6>
-                             <p class="mb-0 text-muted">8%</P>
-                         </div>
-                     </div>
-                 </a>
-                 <a href="#" class="list-group-item list-group-item-action">
-                     <div class="d-flex">
-                         <div class="flex-shrink-0">
-                             <div class="avtar avtar-s rounded-circle text-danger bg-light-danger">
-                                 <i class="ti ti-settings f-18"></i>
-                             </div>
-                         </div>
-                         <div class="flex-grow-1 ms-3">
-                             <h6 class="mb-1">Order #988784</h6>
-                             <p class="mb-0 text-muted">7 hours ago</P>
-                         </div>
-                         <div class="flex-shrink-0 text-end">
-                             <h6 class="mb-1">- $682</h6>
-                             <p class="mb-0 text-muted">16%</P>
-                         </div>
-                     </div>
-                 </a>
-             </div>
-         </div>
-     </div>
- </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Data Kematian</h6>
+                <h4 class="mb-3">8 <span class="badge bg-light-danger border border-danger">
+                        <i class="ti ti-trending-down"></i> 1.1%</span></h4>
+                <p class="mb-0 text-muted text-sm">Turun <span class="text-danger">3</span> kasus dari bulan lalu</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grafik Statistik Penduduk -->
+    <div class="col-md-12 col-xl-8">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h5 class="mb-0">Statistik Penduduk</h5>
+            <ul class="nav nav-pills justify-content-end mb-0" id="chart-tab-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="chart-tab-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#chart-tab-home" type="button" role="tab" aria-controls="chart-tab-home"
+                        aria-selected="true">Per Bulan</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="chart-tab-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#chart-tab-profile" type="button" role="tab"
+                        aria-controls="chart-tab-profile" aria-selected="false">Per Minggu</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="tab-content" id="chart-tab-tabContent">
+                    <div class="tab-pane" id="chart-tab-home" role="tabpanel" aria-labelledby="chart-tab-home-tab"
+                        tabindex="0">
+                        <div id="statistik-bulanan"></div>
+                    </div>
+                    <div class="tab-pane show active" id="chart-tab-profile" role="tabpanel"
+                        aria-labelledby="chart-tab-profile-tab" tabindex="0">
+                        <div id="statistik-mingguan"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistik Anggaran Desa -->
+    <div class="col-md-12 col-xl-4">
+        <h5 class="mb-3">Anggaran Desa</h5>
+        <div class="card">
+            <div class="card-body">
+                <h6 class="mb-2 f-w-400 text-muted">Penggunaan Minggu Ini</h6>
+                <h3 class="mb-3">Rp 12.450.000</h3>
+                <div id="anggaran-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel Pengajuan Warga -->
+    <div class="col-md-12 col-xl-8">
+        <h5 class="mb-3">Pengajuan Warga</h5>
+        <div class="card tbl-card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-borderless mb-0">
+                        <thead>
+                            <tr>
+                                <th>No. Surat</th>
+                                <th>Nama Pengaju</th>
+                                <th>Jenis Surat</th>
+                                <th>Status</th>
+                                <th class="text-end">Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" class="text-muted">SK-00021</a></td>
+                                <td>Ahmad Setiawan</td>
+                                <td>Surat Domisili</td>
+                                <td><span class="badge bg-warning text-dark">Diproses</span></td>
+                                <td class="text-end">08 Okt 2025</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-muted">SK-00018</a></td>
+                                <td>Sri Wahyuni</td>
+                                <td>Surat Keterangan Usaha</td>
+                                <td><span class="badge bg-success">Selesai</span></td>
+                                <td class="text-end">06 Okt 2025</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-muted">SK-00015</a></td>
+                                <td>Budi Santoso</td>
+                                <td>Surat Kematian</td>
+                                <td><span class="badge bg-danger">Ditolak</span></td>
+                                <td class="text-end">03 Okt 2025</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="text-muted">SK-00012</a></td>
+                                <td>Dewi Lestari</td>
+                                <td>Surat Keterangan Tidak Mampu</td>
+                                <td><span class="badge bg-warning text-dark">Diproses</span></td>
+                                <td class="text-end">01 Okt 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Laporan Keuangan Desa -->
+    <div class="col-md-12 col-xl-4">
+        <h5 class="mb-3">Laporan Keuangan</h5>
+        <div class="card">
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                    Dana Desa Terserap<span class="h6 mb-0 text-success">85%</span></a>
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                    Dana Operasional<span class="h6 mb-0 text-primary">Rp 4,2 Jt</span></a>
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                    Belanja Sosial<span class="h6 mb-0 text-warning">Rp 2,1 Jt</span></a>
+            </div>
+            <div class="card-body px-2">
+                <div id="laporan-keuangan-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aktivitas Warga -->
+    <div class="col-md-12 col-xl-4">
+        <h5 class="mb-3">Aktivitas Warga</h5>
+        <div class="card">
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="avtar avtar-s rounded-circle text-success bg-light-success">
+                                <i class="ti ti-home f-18"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-1">Pengajuan Surat Domisili</h6>
+                            <p class="mb-0 text-muted">Hari ini, 08:00</p>
+                        </div>
+                        <div class="flex-shrink-0 text-end">
+                            <h6 class="mb-1 text-success">+1</h6>
+                            <p class="mb-0 text-muted">Baru</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="avtar avtar-s rounded-circle text-primary bg-light-primary">
+                                <i class="ti ti-users f-18"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-1">Pendataan Keluarga Baru</h6>
+                            <p class="mb-0 text-muted">Kemarin, 14:30</p>
+                        </div>
+                        <div class="flex-shrink-0 text-end">
+                            <h6 class="mb-1 text-primary">+2 KK</h6>
+                            <p class="mb-0 text-muted">Tercatat</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="avtar avtar-s rounded-circle text-danger bg-light-danger">
+                                <i class="ti ti-alert-triangle f-18"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-1">Laporan Pengaduan Jalan Rusak</h6>
+                            <p class="mb-0 text-muted">2 jam lalu</p>
+                        </div>
+                        <div class="flex-shrink-0 text-end">
+                            <h6 class="mb-1 text-danger">1 Laporan</h6>
+                            <p class="mb-0 text-muted">Menunggu</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
