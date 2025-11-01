@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\PengajuanSuratController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,12 +26,8 @@ Route::middleware(['guest'])->group(
         Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
         Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
-
-
-
         Route::get('/auth/{provider}', [AuthController::class, 'redirect'])->name('sso.redirect');
         Route::get('/auth/{provider}/callback', [AuthController::class, 'callback'])->name('sso.callback');
-
 
         // Request reset link
         Route::get('/forgot-password', [AuthController::class, 'showRequestForm'])->name('forgot_password.email_form');
@@ -55,7 +53,14 @@ Route::middleware(['auth', 'web'])->group(function () {
     });
 
     // Admin routes
-    Route::middleware(['cekRole:admin'])->group(function () {
+    Route::middleware(['cekRole:admin'])->prefix('admin')->group(function () {
+        // Data Penduduk
+        Route::resource('penduduk', PendudukController::class);
+
+        // Pengajuan Surat Admin Routes
+        Route::get('/pengajuan-surat', [PengajuanSuratController::class, 'adminIndex'])->name('admin.pengajuan-surat.index');
+        Route::get('/pengajuan-surat/{pengajuanSurat}', [PengajuanSuratController::class, 'show'])->name('admin.pengajuan-surat.show');
+        Route::patch('/pengajuan-surat/{pengajuanSurat}/status', [PengajuanSuratController::class, 'updateStatus'])->name('admin.pengajuan-surat.update-status');
 
         Route::get('/verifikasi', function () {
             return view('admin.verifikasi');
@@ -73,7 +78,6 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     // User routes
     Route::middleware(['cekRole:user'])->group(function () {
-
         Route::get('/biodata',  [BiodataController::class, 'index'])->name('user.biodata');
         Route::get('/dokumen', function () {
             return view('user.dokumen');
@@ -84,5 +88,14 @@ Route::middleware(['auth', 'web'])->group(function () {
         Route::get('/daftar-ulang', function () {
             return view('user.daftar_ulang');
         })->name('user.daftar_ulang');
+
+        // Pengajuan Surat untuk User
+        Route::get('/pengajuan-surat', [PengajuanSuratController::class, 'index'])->name('pengajuan-surat.index');
+        Route::get('/pengajuan-surat/create', [PengajuanSuratController::class, 'create'])->name('pengajuan-surat.create');
+        Route::post('/pengajuan-surat', [PengajuanSuratController::class, 'store'])->name('pengajuan-surat.store');
+        Route::get('/pengajuan-surat/{pengajuanSurat}', [PengajuanSuratController::class, 'show'])->name('pengajuan-surat.show');
+        Route::delete('/pengajuan-surat/{pengajuanSurat}', [PengajuanSuratController::class, 'destroy'])->name('pengajuan-surat.destroy');
+        Route::get('/pengajuan-surat/{pengajuanSurat}/download-pengantar', [PengajuanSuratController::class, 'downloadSuratPengantar'])->name('pengajuan-surat.download-pengantar');
+        Route::get('/pengajuan-surat/{pengajuanSurat}/download-surat-jadi', [PengajuanSuratController::class, 'downloadSuratJadi'])->name('pengajuan-surat.download-surat-jadi');
     });
 });

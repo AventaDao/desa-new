@@ -1,3 +1,15 @@
+<li class="pc-item {{ request()->is('penduduk*') ? 'active' : '' }}">
+    <a href="{{ route('penduduk.index') }}" class="pc-link">
+        <span class="pc-micon"><i class="ti ti-users"></i></span>
+        <span class="pc-mtext">Data Penduduk</span>
+    </a>
+</li>
+<li class="pc-item {{ request()->is('pengajuan-surat*') ? 'active' : '' }}">
+    <a href="{{ route('admin.pengajuan-surat.index') }}" class="pc-link">
+        <span class="pc-micon"><i class="ti ti-file-text"></i></span>
+        <span class="pc-mtext">Pengajuan Surat</span>
+    </a>
+</li>
 <li class="pc-item">
     <a href="{{ route('admin.verifikasi') }}" class="pc-link">
         <span class="pc-micon"><i class="ti ti-file-check"></i>
