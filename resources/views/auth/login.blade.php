@@ -11,21 +11,36 @@
                     <h3 class="mb-0"><b>Login</b></h3>
                     <a href="/register" class="link-primary">Don't have an account?</a>
                 </div>
+
+                {{-- Blacklist Alert --}}
+                @if(session('blacklisted'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <h5 class="alert-heading"><i class="ti ti-ban me-2"></i>Akses Ditolak</h5>
+                        <hr>
+                        <p class="mb-2"><strong>Anda tidak memiliki izin untuk mengakses akun ini.</strong></p>
+                        <p class="mb-2"><strong>Alasan:</strong> {{ session('blacklist_reason') }}</p>
+                        <p class="mb-2"><strong>Blacklist berakhir pada:</strong> {{ session('blacklist_expires_at') }}</p>
+                        <p class="mb-0"><strong>Sisa waktu:</strong> {{ session('blacklist_remaining') }}</p>
+                        <hr>
+                        <p class="mb-0 text-sm">Silakan hubungi Admin untuk informasi lebih lanjut atau coba lagi setelah masa blacklist berakhir.</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                @endif
+
                 @if ($errors->any())
                     <div class="alert alert-danger">
-
                         @foreach ($errors->all() as $error)
                             <div>{{ $error }}</div>
                         @endforeach
-
                     </div>
-
                 @endif
+
                 @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success') }}
                     </div>
                 @endif
+
                 <div class="form-group mb-3">
                     <label class="form-label">Email Address</label>
                     <input type="email" class="form-control" name="email" placeholder="Email Address"
@@ -33,7 +48,6 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="password" class="form-label">Password</label>
-
                     @if (session('registered_email'))
                         <input id="password" type="password" class="form-control" name="password" placeholder="Password"
                             autofocus required>
@@ -45,8 +59,7 @@
                 <div class="d-flex mt-1 justify-content-between">
                     <div class="form-check">
                         <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" name="remember">
-                        <label class="form-check-label text-muted" for="customCheckc1">Keep me sign
-                            in</label>
+                        <label class="form-check-label text-muted" for="customCheckc1">Keep me sign in</label>
                     </div>
                     <a href="{{ route('forgot_password.email_form') }}" class="text-secondary f-w-400">Forgot Password?</a>
                 </div>

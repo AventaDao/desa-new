@@ -5,43 +5,42 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PengajuanSuratController;
+use App\Http\Controllers\BlacklistController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/contact-us', function () {
     return view('contact');
 });
+
 Route::get('/verify-email', [AuthController::class, 'showVerifyForm'])->name('verify.form');
-
 Route::post('/send-otp', [AuthController::class, 'sendOtp'])->name('send.otp');
-
 Route::post('/verify-email', [AuthController::class, 'verify'])->name('verify.otp');
+
 // Route yang hanya bisa diakses oleh user yang belum login
-Route::middleware(['guest'])->group(
-    function () {
-        Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-        Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-        Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-        Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+    Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
-        Route::get('/auth/{provider}', [AuthController::class, 'redirect'])->name('sso.redirect');
-        Route::get('/auth/{provider}/callback', [AuthController::class, 'callback'])->name('sso.callback');
+    Route::get('/auth/{provider}', [AuthController::class, 'redirect'])->name('sso.redirect');
+    Route::get('/auth/{provider}/callback', [AuthController::class, 'callback'])->name('sso.callback');
 
-        // Request reset link
-        Route::get('/forgot-password', [AuthController::class, 'showRequestForm'])->name('forgot_password.email_form');
-        Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('forgot_password.send_link');
+    // Request reset link
+    Route::get('/forgot-password', [AuthController::class, 'showRequestForm'])->name('forgot_password.email_form');
+    Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('forgot_password.send_link');
 
-        // Reset password form
-        Route::get('/password-reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
-        Route::post('/password-reset', [AuthController::class, 'resetPassword'])->name('password.update');
-    }
-);
-
+    // Reset password form
+    Route::get('/password-reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/password-reset', [AuthController::class, 'resetPassword'])->name('password.update');
+});
 
 // Route yang hanya bisa diakses oleh user yang sudah login
-Route::middleware(['auth', 'web'])->group(function () {
+Route::middleware(['auth', 'web', 'check.blacklist'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -56,6 +55,15 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::middleware(['cekRole:admin'])->prefix('admin')->group(function () {
         // Data Penduduk
         Route::resource('penduduk', PendudukController::class);
+
+        // Blacklist Management
+        Route::get('/blacklist', [BlacklistController::class, 'index'])->name('admin.blacklist.index');
+        Route::get('/blacklist/create', [BlacklistController::class, 'create'])->name('admin.blacklist.create');
+        Route::post('/blacklist', [BlacklistController::class, 'store'])->name('admin.blacklist.store');
+        Route::get('/blacklist/{blacklist}/edit', [BlacklistController::class, 'edit'])->name('admin.blacklist.edit');
+        Route::put('/blacklist/{blacklist}', [BlacklistController::class, 'update'])->name('admin.blacklist.update');
+        Route::delete('/blacklist/{blacklist}', [BlacklistController::class, 'destroy'])->name('admin.blacklist.destroy');
+        Route::post('/blacklist/{blacklist}/reactivate', [BlacklistController::class, 'reactivate'])->name('admin.blacklist.reactivate');
 
         // Pengajuan Surat Admin Routes
         Route::get('/pengajuan-surat', [PengajuanSuratController::class, 'adminIndex'])->name('admin.pengajuan-surat.index');
@@ -78,7 +86,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     // User routes
     Route::middleware(['cekRole:user'])->group(function () {
-        Route::get('/biodata',  [BiodataController::class, 'index'])->name('user.biodata');
+        Route::get('/biodata', [BiodataController::class, 'index'])->name('user.biodata');
         Route::get('/dokumen', function () {
             return view('user.dokumen');
         })->name('user.dokumen');
