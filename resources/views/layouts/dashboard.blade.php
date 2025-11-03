@@ -343,6 +343,10 @@
                 history.replaceState(null, null, window.location.pathname);
             }
         </script>
+        <!-- Floating Pengaduan (hanya untuk user, bukan admin) -->
+@if(Auth::check() && Auth::user()->role !== 'admin')
+    @include('components.floating-pengaduan')
+@endif
     </body>
     <!-- [Body] end -->
 

@@ -2,13 +2,13 @@
 <html lang="id">
 
 <head>
-    <title>@yield('title') - Aplikasi Sistem Informasi Desa Candi</title>
+    <title>@yield('title') - Aplikasi Sistem Informasi Desa Kedung Kendo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Aplikasi Sistem Informasi Desa Candi membantu pengelolaan data dan informasi desa secara digital.">
-    <meta name="keywords" content="Sistem Informasi Desa, Desa Candi, SID, Data Desa, Pemerintahan Desa">
-    <meta name="author" content="Desa Candi">
+    <meta name="description" content="Aplikasi Sistem Informasi Desa Kedung Kendo membantu pengelolaan data dan informasi desa secara digital.">
+    <meta name="keywords" content="Sistem Informasi Desa, Desa Kedung Kendo, SID, Data Desa, Pemerintahan Desa">
+    <meta name="author" content="Desa Kedung Kendo">
 
     <link rel="icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
 
@@ -70,7 +70,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="btn btn-primary" href="/login">Login Admin</a>
+                            <a class="btn btn-primary" href="/login">Login</a>
                         </li>
                     @endif
                 </ul>
@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <img src="{{ asset('assets/images/my/icon-sda.png') }}" alt="Logo Desa Candi" class="img-fluid mb-3" style="max-width: 200px;">
-                        <p class="opacity-75">Desa Candi berkomitmen untuk membangun tata kelola pemerintahan desa yang transparan, akuntabel, dan berorientasi pada pelayanan masyarakat.</p>
+                        <p class="opacity-75">Desa Kedung Kendo berkomitmen untuk membangun tata kelola pemerintahan desa yang transparan, akuntabel, dan berorientasi pada pelayanan masyarakat.</p>
                     </div>
                     <div class="col-md-8">
                         <div class="row">
@@ -105,11 +105,11 @@
                                 <ul class="list-unstyled footer-link">
                                     <li class="d-flex">
                                         <i class="ti ti-map-pin me-2 mt-1"></i>
-                                        <span>Jl. Raya Candi No. 45, Kecamatan Sidoarjo, Kabupaten Sidoarjo, Jawa Timur</span>
+                                        <span>Jl. Raya Sugihwaras , Kecamatan Candi, Kabupaten Sidoarjo, Jawa Timur</span>
                                     </li>
                                     <li class="d-flex">
                                         <i class="ti ti-mail me-2 mt-1"></i>
-                                        <span>info@desacandi.id</span>
+                                        <span>info@desakdk.id</span>
                                     </li>
                                     <li class="d-flex">
                                         <i class="ti ti-phone me-2 mt-1"></i>
@@ -135,7 +135,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col my-1">
-                        <p class="text-white mb-0">© {{ date('Y') }} Pemerintah Desa Candi. Semua hak dilindungi.</p>
+                        <p class="text-white mb-0">© {{ date('Y') }} Pemerintah Desa Kedung Kendo. Semua hak dilindungi.</p>
                     </div>
                     <div class="col-auto my-1">
                         <ul class="list-inline footer-sos-link mb-0">

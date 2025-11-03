@@ -241,7 +241,7 @@
                                             class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
                                     </div>
                                     <p class="mb-2 text-muted">Proses pengurusan surat jauh lebih mudah dan cepat melalui sistem ini. Sangat membantu warga!</p>
-                                    <h6 class="mb-0">Dimas Satrya, Warga</h6>
+                                    <h6 class="mb-0">Dao Rachel Lie, Warga</h6>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +265,7 @@
                                             class="fas fa-star-half-alt text-warning"></i>
                                     </div>
                                     <p class="mb-2 text-muted">Sekarang semua informasi desa bisa diakses dengan mudah dan terbuka. Sangat bagus untuk warga.</p>
-                                    <h6 class="mb-0">Dimas Blek, Warga</h6>
+                                    <h6 class="mb-0">deezydaoo, Warga</h6>
                                 </div>
                             </div>
                         </div>
@@ -288,7 +288,7 @@
                                             class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
                                     </div>
                                     <p class="mb-2 text-muted">Sistem ini benar-benar membantu warga mengurus layanan tanpa harus datang ke kantor desa.</p>
-                                    <h6 class="mb-0">Bleketek, Warga</h6>
+                                    <h6 class="mb-0">dao, Warga</h6>
                                 </div>
                             </div>
                         </div>

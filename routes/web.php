@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PengajuanSuratController;
+use App\Http\Controllers\BeritaDesaController;
+use App\Http\Controllers\PengaduanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,7 +45,9 @@ Route::middleware(['guest'])->group(
 // Route yang hanya bisa diakses oleh user yang sudah login
 Route::middleware(['auth', 'web'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $beritas = \App\Models\BeritaDesa::published()->take(5)->get();
+        $user = auth()->user();
+        return view('dashboard', compact('beritas', 'user'));
     })->name('dashboard');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -54,6 +58,9 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     // Admin routes
     Route::middleware(['cekRole:admin'])->prefix('admin')->group(function () {
+        // Berita Desa
+        Route::resource('berita', BeritaDesaController::class);
+        
         // Data Penduduk
         Route::resource('penduduk', PendudukController::class);
 
@@ -61,6 +68,11 @@ Route::middleware(['auth', 'web'])->group(function () {
         Route::get('/pengajuan-surat', [PengajuanSuratController::class, 'adminIndex'])->name('admin.pengajuan-surat.index');
         Route::get('/pengajuan-surat/{pengajuanSurat}', [PengajuanSuratController::class, 'show'])->name('admin.pengajuan-surat.show');
         Route::patch('/pengajuan-surat/{pengajuanSurat}/status', [PengajuanSuratController::class, 'updateStatus'])->name('admin.pengajuan-surat.update-status');
+
+    // Pengaduan (Admin)
+    Route::get('/pengaduan', [PengaduanController::class, 'adminIndex'])->name('admin.pengaduan.index');
+    Route::get('/pengaduan/{pengaduan}', [PengaduanController::class, 'show'])->name('admin.pengaduan.show');
+    Route::patch('/pengaduan/{pengaduan}/tanggapan', [PengaduanController::class, 'updateTanggapan'])->name('admin.pengaduan.update-tanggapan');
 
         Route::get('/verifikasi', function () {
             return view('admin.verifikasi');
@@ -97,5 +109,13 @@ Route::middleware(['auth', 'web'])->group(function () {
         Route::delete('/pengajuan-surat/{pengajuanSurat}', [PengajuanSuratController::class, 'destroy'])->name('pengajuan-surat.destroy');
         Route::get('/pengajuan-surat/{pengajuanSurat}/download-pengantar', [PengajuanSuratController::class, 'downloadSuratPengantar'])->name('pengajuan-surat.download-pengantar');
         Route::get('/pengajuan-surat/{pengajuanSurat}/download-surat-jadi', [PengajuanSuratController::class, 'downloadSuratJadi'])->name('pengajuan-surat.download-surat-jadi');
+
+    // Pengaduan (User)
+    Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan.index');
+    Route::get('/pengaduan/create', [PengaduanController::class, 'create'])->name('pengaduan.create');
+    Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengaduan.store');
+    Route::get('/pengaduan/{pengaduan}', [PengaduanController::class, 'show'])->name('pengaduan.show');
+    Route::delete('/pengaduan/{pengaduan}', [PengaduanController::class, 'destroy'])->name('pengaduan.destroy');
+    Route::get('/pengaduan/{pengaduan}/download-lampiran', [PengaduanController::class, 'downloadLampiran'])->name('pengaduan.download-lampiran');
     });
 });
