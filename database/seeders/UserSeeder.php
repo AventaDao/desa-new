@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         // User biasa
         DB::table('users')->insert([
             'nik' => '3515012345678901',
-            'nama_lengkap' => 'User Satu',
+            'nama_lengkap' => 'userdao',
             'tempat_lahir' => 'Sidoarjo',
             'tanggal_lahir' => '1990-01-01',
             'jenis_kelamin' => 'Laki-laki',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         // Admin
         DB::table('users')->insert([
             'nik' => '3515019876543210',
-            'nama_lengkap' => 'Admin Desa',
+            'nama_lengkap' => 'deezydao',
             'tempat_lahir' => 'Sidoarjo',
             'tanggal_lahir' => '1985-05-15',
             'jenis_kelamin' => 'Laki-laki',
