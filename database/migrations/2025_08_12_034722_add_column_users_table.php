@@ -11,11 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('otp_code')->nullable();
-            $table->dateTime('otp_expires_at')->nullable();
-            $table->boolean('is_verified')->default(false);
-        });
+        // Add columns only if they do not already exist to avoid duplicate column errors
+        if (!Schema::hasColumn('users', 'otp_code')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('otp_code')->nullable();
+            });
+        }
+
+        if (!Schema::hasColumn('users', 'otp_expires_at')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dateTime('otp_expires_at')->nullable();
+            });
+        }
+
+        if (!Schema::hasColumn('users', 'is_verified')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->boolean('is_verified')->default(false);
+            });
+        }
     }
 
     /**
@@ -23,8 +36,24 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['otp_code', 'otp_expires_at', 'is_verified']);
-        });
+        // Drop columns only if they exist
+        if (Schema::hasColumn('users', 'otp_code') || Schema::hasColumn('users', 'otp_expires_at') || Schema::hasColumn('users', 'is_verified')) {
+            Schema::table('users', function (Blueprint $table) {
+                $drop = [];
+                if (Schema::hasColumn('users', 'otp_code')) {
+                    $drop[] = 'otp_code';
+                }
+                if (Schema::hasColumn('users', 'otp_expires_at')) {
+                    $drop[] = 'otp_expires_at';
+                }
+                if (Schema::hasColumn('users', 'is_verified')) {
+                    $drop[] = 'is_verified';
+                }
+
+                if (!empty($drop)) {
+                    $table->dropColumn($drop);
+                }
+            });
+        }
     }
 };
